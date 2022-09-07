@@ -23,8 +23,11 @@ class PhonebookController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    $btn = '<a href="javascript:void(0)" class="btn btn-primary btn-sm">View</a>';
-                    return $btn;
+                    return '
+                        <a href="javascript:void(0)" class="btn btn-primary" title="Tambah Kontak"><i class="mdi mdi-book-multiple"></i></a>
+                        <a href="javascript:void(0)" class="btn btn-danger" title="Hapus Kontak"><i class="mdi mdi-delete-sweep"></i></a>
+                        
+                        ';
                 })
                 ->addColumn('device', function ($row) {
                     return $row->setting->name;
