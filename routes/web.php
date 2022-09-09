@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PhonebookController;
 use App\Http\Controllers\SettingController;
@@ -33,6 +34,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'setting'], function () {
         Route::get('/whatsapp/{device_id}', [SettingController::class, 'whatsapp']);
     });
+    Route::resource('device', DeviceController::class);
+    Route::group(['prefix' => 'device'], function () {
+        Route::get('/whatsapp/{device_id}', [SettingController::class, 'whatsapp']);
+    });
+
     Route::group(['prefix' => 'phonebook'], function () {
         Route::get('/', [PhonebookController::class, 'index']);
         Route::post('/', [PhonebookController::class, 'store']);

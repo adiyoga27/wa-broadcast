@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('css')
-    <!-- Custom CSS -->
-    {{-- <link rel="stylesheet" href="{{url('assets/libs/apexcharts/dist/apexcharts.css')}}"> --}}
-    <link href="{{url('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
+<!-- Custom CSS -->
+<title>Dashboard GAWA</title>
+<link href="{{url('assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet" />
 @endsection
 @section('content-header')
 <div class="page-breadcrumb">
@@ -37,11 +37,11 @@
                     <div class="col-md-12">
                         <div class="d-flex no-block align-items-center">
                             <div>
-                                <i class="ri-emotion-line fs-6 text-muted"></i>
-                                <p class="fs-4 mb-1">New Clients</p>
+                                <i class="ri-book-open-fill fs-6 text-muted"></i>
+                                <p class="fs-4 mb-1">Phonebook</p>
                             </div>
                             <div class="ms-auto">
-                                <h1 class="fw-light text-end">23</h1>
+                                <h1 class="fw-light text-end">{{$data['phonebooks']}}</h1>
                             </div>
                         </div>
                     </div>
@@ -61,11 +61,11 @@
                     <div class="col-md-12">
                         <div class="d-flex no-block align-items-center">
                             <div>
-                                <i class="ri-image-fill fs-6  text-muted"></i>
-                                <p class="fs-4 mb-1">New Projects</p>
+                                <i class="ri-cellphone-line fs-6  text-muted"></i>
+                                <p class="fs-4 mb-1">Device</p>
                             </div>
                             <div class="ms-auto">
-                                <h1 class="fw-light text-end">169</h1>
+                                <h1 class="fw-light text-end">{{$data['devices']}}</h1>
                             </div>
                         </div>
                     </div>
@@ -85,11 +85,11 @@
                     <div class="col-md-12">
                         <div class="d-flex no-block align-items-center">
                             <div>
-                                <i class="ri-money-euro-circle-line fs-6 text-muted"></i>
-                                <p class="fs-4 mb-1">New Invoices</p>
+                                <i class="ri-chat-1-fill fs-6 text-muted"></i>
+                                <p class="fs-4 mb-1">Messages</p>
                             </div>
                             <div class="ms-auto">
-                                <h1 class="fw-light text-end">157</h1>
+                                <h1 class="fw-light text-end">{{$data['messages']}}</h1>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
     <!-- ============================================================== -->
     <!-- Sales chart -->
     <!-- ============================================================== -->
-    
+
 </div>
 @endsection
 @section('js')

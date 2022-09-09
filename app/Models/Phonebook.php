@@ -9,4 +9,8 @@ class Phonebook extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public function category_phonebooks()
+    {
+        return $this->hasOne(CategoryPhonebook::class, 'id', 'category_phonebook_id');
+    }
 }

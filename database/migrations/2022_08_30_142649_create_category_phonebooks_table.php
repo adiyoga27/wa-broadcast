@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('category_phonebooks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('setting_id');
-            $table->foreign('setting_id')->references('id')->on('settings');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('name', 100);
             $table->timestamps();
             $table->softDeletes();

@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->string('url',100);
-            $table->string('port',10);
-            $table->string('api_key',50);
-            $table->string('device_id',10);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('name', 100);
+            $table->string('url', 100);
+            $table->string('port', 10);
+            $table->string('api_key', 50);
+            $table->string('device_id', 10)->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamps();
             $table->softDeletes();

@@ -9,8 +9,8 @@ class Message extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function setting()
+    public function settings()
     {
-        return $this->hasMany(Setting::class);
+        return $this->hasOne(Setting::class, 'id', 'setting_id');
     }
 }
